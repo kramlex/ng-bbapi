@@ -1,24 +1,10 @@
+<a [routerLink]="['quotes', 1]">Kek 1</a>
+<a [routerLink]="['quotes', 2]">Kek 2</a>
+<a [routerLink]="['quotes', 3]">Kek 3</a>
+<a [routerLink]="['']">Home</a>
 <app-header></app-header>
-<div class="statusBoard">
-  <button class="button" (click)="onSetStatus('alive')">Alive</button>
-  <button class="button" (click)="onSetStatus('deceased')">Deceased</button>
-  <button class="button" (click)="onSetStatus('presumed dead')">Presumed dead</button>
-  <button class="button" (click)="onSetStatus('not select')">Not select</button>
-</div>
 
-
-<div class="content">
-  <div class="item" *ngFor="let character of characters | async | filterStatus : status" >
-    <div class="card">
-      <img src='{{character.img}}' alt="Character photo" style="width:100%">
-      <div class="container">
-        <h4>Name: <b>{{character.name}} {{ character.nickname ? '('+character.nickname+')' : null }}</b></h4>
-        <p>Birthday: {{ character.birthday }}</p>
-        <p>Status: {{ character.status }}</p>
-      </div>
-    </div>
-  </div>
-</div>
+<router-outlet></router-outlet>
 
 
 

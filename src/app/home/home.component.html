@@ -1,0 +1,13 @@
+<div class="statusBoard">
+  <button class="button" (click)="onSetStatus('alive')">Alive</button>
+  <button class="button" (click)="onSetStatus('deceased')">Deceased</button>
+  <button class="button" (click)="onSetStatus('presumed dead')">Presumed dead</button>
+  <button class="button" (click)="onSetStatus('not select')">Not select</button>
+</div>
+
+
+<div class="content">
+  <div class="item" *ngFor="let character of characters | async | filterStatus : status" >
+    <app-card [img]="character.img" [birthday]="character.birthday" [nickname]="character.nickname" [name]="character.name" [status]="character.status" ></app-card>
+  </div>
+</div>

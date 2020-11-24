@@ -1,0 +1,36 @@
+.card {
+  margin: 20px;
+  width: 300px;
+
+  display: flex;
+  flex-direction: column;
+  height: 660px;
+
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  .container {
+    padding: 2px 16px;
+  }
+  .quotelink {
+    height: 100px;
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-end;
+    a {
+      text-decoration: none;
+      size: 30px;
+      padding: 10px;
+      font-weight: bold;
+      color: black;
+    }
+    a:hover {
+      color: #004F72;
+    }
+  }
+}
+
+.card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}

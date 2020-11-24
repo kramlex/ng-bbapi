@@ -1,1 +1,8 @@
-<p>quotes works!</p>
+<h1><a routerLink="" class="previous round">&#8249;</a>  {{name}}</h1>
+<div class="item" *ngFor="let quote of quotes$ | async" >
+  <blockquote class="otro-blockquote">
+    {{quote.quote}}
+    <span>{{quote.author}}</span>
+  </blockquote>
+</div>
+

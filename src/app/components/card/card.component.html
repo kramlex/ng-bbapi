@@ -1,0 +1,11 @@
+<div class="card">
+  <img src='{{img}}' alt="Character photo" style="width:100%">
+  <div class="container">
+    <h4>Name: <b>{{name}} {{ nickname ? '('+nickname+')' : null }}</b></h4>
+    <p>Birthday: {{ birthday }}</p>
+    <p>Status: {{ status }}</p>
+  </div>
+  <div class="quotelink">
+    <a [routerLink]="['quotes', name]">Quotes</a>
+  </div>
+</div>

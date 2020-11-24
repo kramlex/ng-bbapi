@@ -1,0 +1,30 @@
+.statusBoard {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.button{
+  margin: 10px;
+  text-decoration:none;
+  text-align:center;
+  padding:11px 32px;
+  border:solid 1px #004F72;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  border-radius: 4px;
+  font:25px "Times New Roman", Monaco, monospace;
+  font-weight:bold;
+  color:#ffffff;
+  background-color:#a5be8f;
+}
+
+.content {
+  margin-top: 50px;
+  width: 100vw;
+  display: inline-block;
+  float: left;
+}
+.item {
+  float: left;
+}
+
