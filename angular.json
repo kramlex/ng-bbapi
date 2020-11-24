@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-bbapi"
+    }
+  },
+  "defaultProject": "ng-bbapi",
+  "cli": {
+    "analytics": "7b43c218-4b0c-40b3-9e7e-4681f4714513"
+  }
 }
