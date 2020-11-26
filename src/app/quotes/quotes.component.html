@@ -1,8 +1,16 @@
-<h1><a routerLink="" class="previous round">&#8249;</a>  {{name}}</h1>
-<div class="item" *ngFor="let quote of quotes$ | async" >
-  <blockquote class="otro-blockquote">
-    {{quote.quote}}
-    <span>{{quote.author}}</span>
-  </blockquote>
+<div class="quotes">
+  <h1><a routerLink="" class="previous round">&#8249;</a>  {{name}}</h1>
+  <app-loader *ngIf="loading"></app-loader>
+  <div *ngIf="!loading" class="list">
+    <h3 *ngIf="!count">This character has no quotes</h3>
+    <div class="item" *ngFor="let quote of quotes | async" >
+      <blockquote class="otro-blockquote">
+        {{quote.quote}}
+        <span>{{quote.author}}</span>
+      </blockquote>
+    </div>
+  </div>
+
 </div>
+
 

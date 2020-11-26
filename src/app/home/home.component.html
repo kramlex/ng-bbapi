@@ -5,8 +5,8 @@
   <button class="button" (click)="onSetStatus('not select')">Not select</button>
 </div>
 
-
-<div class="content">
+<app-loader *ngIf="loading"></app-loader>
+<div class="content" *ngIf="!loading">
   <div class="item" *ngFor="let character of characters | async | filterStatus : status" >
     <app-card [img]="character.img" [birthday]="character.birthday" [nickname]="character.nickname" [name]="character.name" [status]="character.status" ></app-card>
   </div>

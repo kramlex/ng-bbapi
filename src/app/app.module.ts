@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { QuotesComponent } from './quotes/quotes.component';
 import { HomeComponent } from './home/home.component';
 import { CardComponent } from './components/card/card.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardComponent } from './components/card/card.component';
     AppComponent,
     QuotesComponent,
     HomeComponent,
-    CardComponent
+    CardComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

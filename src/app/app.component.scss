@@ -1,0 +1,70 @@
+@mixin center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%,-50%);
+}
+
+$border:8px solid #FF7C81;
+$bc:#FF7C81;
+$mc:#FAC090;
+
+.bottle {
+  @include center;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border:$border;
+  overflow: hidden;
+}
+
+.b1 {
+  @include center;
+  width:43px;
+  background: linear-gradient(to right, $bc 0px, $bc 8px, #fff 8px, #fff 35px, $bc 35px, $bc 43px);
+  height:50px;
+  transform:translate(-50%, calc(-50% + -73px));
+  z-index:2;
+}
+
+.b2 {
+  @include center;
+  width:50px;
+  height:20px;
+  border:$border;
+  border-radius: 30% 30% 30% 30%/50% 50% 50% 50%;
+  transform:translate(-50%, calc(-50% + -108px));
+}
+
+.mixin {
+  width:100%;
+  height: 70%;
+  position: absolute;
+  bottom: 0;
+  background: $mc;
+  overflow: hidden;
+}
+
+.bubbles {
+  border-radius: 50%;
+  position: absolute;
+  bottom:-20%;
+  background: lightyellow;
+  animation:a 1s ease-in-out infinite;
+}
+
+@for $i from 1 through 30 {
+  .bubbles:nth-child(#{$i}){
+    animation-delay: ($i * .1s);
+  }
+}
+
+@keyframes a {
+  0% {
+    bottom:-20%;
+  }
+
+  100% {
+    bottom:100%;
+  }
+}

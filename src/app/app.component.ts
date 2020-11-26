@@ -9,11 +9,4 @@ import {Status} from './core/models/status';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  status: Status = 'not select';
-  characters: Observable<Character[]> = this.apiService.loadCharacters();
-  constructor(private apiService: ApiService) {}
-  onSetStatus(status: Status) {
-    this.status = status;
-  }
-}
+export class AppComponent {}

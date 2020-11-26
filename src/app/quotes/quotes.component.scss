@@ -1,70 +1,73 @@
-h1 {
-  font-size: 60px;
-  margin: 0 auto;
-  text-align: center;
-  a {
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 16px;
+.quotes {
+  h1 {
+    font-size: 60px;
+    margin: 0 auto;
+    text-align: center;
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .previous {
+      background-color: #f1f1f1;
+      color: black;
+    }
+
+    .next {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .round {
+      border-radius: 20%;
+    }
   }
 
-  a:hover {
-    background-color: #ddd;
-    color: black;
+
+  .otro-blockquote{
+    font-size: 1.4em;
+    width:60%;
+    margin:50px auto;
+    font-family: Open Sans, sans-serif;
+    font-style:italic;
+    color: #555555;
+    padding:1.2em 30px 1.2em 75px;
+    border-left:8px solid #8c9e5c;
+    line-height:1.6;
+    position: relative;
+    background:#EDEDED;
   }
 
-  .previous {
-    background-color: #f1f1f1;
-    color: black;
+  .otro-blockquote::before{
+    font-family: Arial, sans-serif;
+    content: "\201C";
+    color:#8c9e5c;
+    font-size:4em;
+    position: absolute;
+    left: 10px;
+    top:-10px;
   }
 
-  .next {
-    background-color: #4CAF50;
-    color: white;
+  .otro-blockquote::after{
+    content: '';
   }
 
-  .round {
-    border-radius: 20%;
+  .otro-blockquote span{
+    display:block;
+    color:#333333;
+    font-style: normal;
+    font-weight: bold;
+    margin-top:1em;
   }
-}
 
-.quote {
-
-}
-
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
-.otro-blockquote{
-  font-size: 1.4em;
-  width:60%;
-  margin:50px auto;
-  font-family: Open Sans, sans-serif;
-  font-style:italic;
-  color: #555555;
-  padding:1.2em 30px 1.2em 75px;
-  border-left:8px solid #8c9e5c;
-  line-height:1.6;
-  position: relative;
-  background:#EDEDED;
-}
-
-.otro-blockquote::before{
-  font-family: Arial, sans-serif;
-  content: "\201C";
-  color:#8c9e5c;
-  font-size:4em;
-  position: absolute;
-  left: 10px;
-  top:-10px;
-}
-
-.otro-blockquote::after{
-  content: '';
-}
-
-.otro-blockquote span{
-  display:block;
-  color:#333333;
-  font-style: normal;
-  font-weight: bold;
-  margin-top:1em;
+  h3 {
+    margin: 0 auto;
+    text-align: center;
+  }
 }

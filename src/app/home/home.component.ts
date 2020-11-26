@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Status} from '../core/models/status';
-import {Observable} from 'rxjs';
+import {Observable, of} from 'rxjs';
 import {Character} from '../core/models/character';
 import {ApiService} from '../core/services/api.service';
 
@@ -11,13 +11,19 @@ import {ApiService} from '../core/services/api.service';
 })
 export class HomeComponent implements OnInit {
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   status: Status = 'not select';
-  characters: Observable<Character[]> = this.apiService.loadCharacters();
-  constructor(private apiService: ApiService) {}
+  characters: Observable<Character[]>;
+  loading: boolean = false;
+  constructor(private apiService: ApiService) {
+    this.loading = true;
+
+    this.apiService.loadCharacters().subscribe(res => {
+      this.characters = of(res);
+      this.loading = false;
+    })
+  }
   onSetStatus(status: Status) {
     this.status = status;
   }
