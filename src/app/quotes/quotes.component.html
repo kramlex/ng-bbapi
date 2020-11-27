@@ -3,7 +3,7 @@
   <app-loader *ngIf="loading"></app-loader>
   <div *ngIf="!loading" class="list">
     <h3 *ngIf="!count">This character has no quotes</h3>
-    <div class="item" *ngFor="let quote of quotes | async" >
+    <div class="item" *ngFor="let quote of quotes" >
       <blockquote class="otro-blockquote">
         {{quote.quote}}
         <span>{{quote.author}}</span>

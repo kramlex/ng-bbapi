@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy} from '@angular/core';
 import {Status} from '../core/models/status';
-import {Observable, of} from 'rxjs';
+import {Subscription} from 'rxjs';
 import {Character} from '../core/models/character';
 import {ApiService} from '../core/services/api.service';
 
@@ -9,21 +9,26 @@ import {ApiService} from '../core/services/api.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
-
-  ngOnInit(): void {}
-
+export class HomeComponent implements OnDestroy {
   status: Status = 'not select';
-  characters: Observable<Character[]>;
+  characters: Character[];
   loading: boolean = false;
+
+  private subs: Subscription = new Subscription();
   constructor(private apiService: ApiService) {
     this.loading = true;
 
-    this.apiService.loadCharacters().subscribe(res => {
-      this.characters = of(res);
+
+    this.subs.add(this.apiService.loadCharacters().subscribe(res => {
+      this.characters = res;
       this.loading = false;
-    })
+    }));
   }
+
+  ngOnDestroy() {
+    this.subs.unsubscribe();
+  }
+
   onSetStatus(status: Status) {
     this.status = status;
   }
